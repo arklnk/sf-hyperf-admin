@@ -1,0 +1,26 @@
+<?php
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+%USES%
+
+class %CLASS% extends BaseValidator
+{
+        /**
+         * 验证规则
+         * @var array
+         */
+        protected $rule = [];
+
+        /**
+         * 验证提示
+         * @var array
+         */
+        protected $message = [];
+
+        /**
+         * 使用场景
+         * @var array
+         */
+        protected $scene = [];
+}
