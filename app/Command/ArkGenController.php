@@ -52,6 +52,7 @@ class ArkGenController extends HyperfCommand
             $content = file_get_contents(__DIR__.'/Template/Controller.stub');
             $content = str_replace(array("%NAMESPACE%", "%USES%", "%CLASS%"), array($fileNamespace, $use, $class), $content);
             file_put_contents($fileName,$content);
+            $this->line('控制器创建完成!', 'info');
         }
     }
 

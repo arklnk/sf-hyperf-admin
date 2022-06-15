@@ -110,6 +110,7 @@ class ArkGenModel extends Command
         } else {
             $this->createModels($option);
         }
+        $this->line('模型创建完成!', 'info');
     }
 
     protected function configure()

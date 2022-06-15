@@ -53,6 +53,7 @@ class ArkGenValidator extends HyperfCommand
             $content = file_get_contents(__DIR__.'/Template/Validator.stub');
             $content = str_replace(array("%NAMESPACE%", "%USES%", "%CLASS%"), array($fileNamespace, $use, $class), $content);
             file_put_contents($fileName,$content);
+            $this->line('验证器创建完成!', 'info');
         }
     }
 

@@ -3,16 +3,12 @@
 declare (strict_types=1);
 namespace App\Model;
 
-use Hyperf\DbConnection\Model\Model;
 /**
  * @property int $id 
  * @property string $name 
  * @property string $username 
  * @property string $password 
  * @property string $head_img 
- * @property string $email 
- * @property string $phone 
- * @property string $remark 
  * @property string $psalt 
  * @property int $status 
  * @property \Carbon\Carbon $updated_at 

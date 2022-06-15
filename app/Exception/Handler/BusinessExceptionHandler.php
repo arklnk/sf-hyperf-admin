@@ -19,7 +19,7 @@ class BusinessExceptionHandler extends ExceptionHandler
      * @Inject()
      * @var Response
      */
-    private $response;
+    protected $response;
 
     public function handle(Throwable $throwable, ResponseInterface $response)
     {

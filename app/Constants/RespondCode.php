@@ -34,28 +34,33 @@ class RespondCode extends AbstractConstants
     const SERVER_ERROR = 500;
 
     /**
+     * @Message("Auth fail")
+     */
+    const AUTH_FAIL = 11001;
+
+    /**
      * @Message("Auth invalid")
      */
-    const AUTH_EXPIRE = 10000;
+    const AUTH_EXPIRE = 11002;
 
     /**
      * @Message("Account or password error")
      */
-    const ACCOUNT_ERROR = 10001;
+    const ACCOUNT_ERROR = 11003;
 
     /**
      * @Message("Account invalid")
      */
-    const ACCOUNT_FORBIDDEN = 10002;
-
-    /**
-     * @Message("Auth fail")
-     */
-    const AUTH_FAIL = 10003;
+    const ACCOUNT_FORBIDDEN = 11004;
 
     /**
      * @Message("Captcha error")
      */
-    const CAPTCHA_ERROR = 10004;
+    const CAPTCHA_ERROR = 11005;
+
+    /**
+     * @Message("Params error")
+     */
+    const PARAM_ERROR = 11006;
 
 }

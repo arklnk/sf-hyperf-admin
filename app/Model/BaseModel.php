@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Model;
 
-use App\Utils\DataFormat;
 use Hyperf\DbConnection\Model\Model;
 
 /**
@@ -16,10 +15,11 @@ class BaseModel extends Model
      * 添加数据
      *
      * @param array $data
+     * @return int
      */
-    public function addItem(array $data)
+    public function addItem(array $data): int
     {
-        self::insert($data);
+        return self::insertGetId($data);
     }
 
     /**
@@ -52,7 +52,7 @@ class BaseModel extends Model
      * @param array $sort
      * @return array
      */
-    public function getItems(array $where, array $field = ['*'], array $sort = []): array
+    public function getMulti(array $where, array $field = ['*'], array $sort = []): array
     {
         if (empty($sort)) {
             return self::formatData(self::where($where)->select(...$field)->get());
@@ -64,7 +64,7 @@ class BaseModel extends Model
     /**
      * 获取区间内数据
      *
-     * @param array $where [['','','']]
+     * @param array $where ['',[]]
      * @param string[] $field
      * @param array $sort
      * @return array
@@ -141,7 +141,7 @@ class BaseModel extends Model
     public function formatData($data): array
     {
         if (!empty($data)) {
-            return DataFormat::underscoreToHump($data->toArray());
+            return $data->toArray();
         } else {
             return [];
         }

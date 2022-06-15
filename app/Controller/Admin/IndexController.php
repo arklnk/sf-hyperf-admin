@@ -50,7 +50,6 @@ class IndexController extends BaseController
      */
     public function login(): ResponseInterface
     {
-        // 参数验证
         $params = $this->indexValidator->validate();
         $token = $this->indexBusiness->login($params);
         return $this->response->success(['token' => $token]);
